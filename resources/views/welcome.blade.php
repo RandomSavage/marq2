@@ -4,97 +4,92 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>marq2</title>
+        <link rel="stylesheet" href="/css/app.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script>
+        window.onload = function () {
+          var clockElement = document.getElementById( "clock" );
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+          function updateClock ( clock ) {
+            clock.innerHTML = new Date().toLocaleTimeString();
+          }
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+          setInterval(function () {
+              updateClock( clockElement );
+          }, 1000);
 
-            .full-height {
-                height: 100vh;
-            }
+        }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+        </script>
+        <link rel="stylesheet" href="styles.css">
+      </head>
+        <body>
+          <div class="container">
+            <div class="header-wrapper">
+              <section class='top-header'>
+                <div class="left-info">
+                  <span class="burger" style="font-size:30px;cursor:pointer">&#9776;</span>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="middle-info">
+                  <div class="hotbox">
+                    <marquee behavior="alternate" direction="right" scrollamount="1">
+                      <div class="img-box">
+                        <div class="img">
+                        </div>
+                      </div>
+                    </marquee>
+                  </div>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="right-info">
+                  <span id="clock"></span>
                 </div>
+              </section>
+              <section class='bottom-header'>
+              </section>
+              <div id="feedback">
+                <marquee behavior="scroll" direction="up" scrollamount="3">
+                  <section class="marqee-section">
+                        <div class="authId">
+                          <div class="author-img">
+
+                          </div>
+                          <div class="who">
+                            <h5>Ananda Dolan</h5>
+                          </div>
+                        </div>
+                        <div class="hands">
+                          <div class="thumbs-up">
+                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                            <p>1</p>
+                          </div>
+                          <div class="thumbs-down">
+                            <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                            <p>2</p>
+                          </div>
+                        </div>
+                    <div class="comment">
+                      <p>When the sky's cotton candy melts and stirs into a sipping-pink lemonade.</p>
+                    </div>
+                    <div class="authId">
+                      <div class="author-img">
+
+                      </div>
+                      <div class="who">
+                        <h5>we know who</h5>
+                      </div>
+                    </div>
+                    <div class="comment">
+                      <p>Are messages felt?</p>
+                    </div>
+              </section>
+            </marquee>
             </div>
-        </div>
-    </body>
-</html>
+            <footer>
+              <form class="" action="index.html" method="post">
+
+              </form>
+            </footer>
+          </div>
+        </body>
+      </html>
