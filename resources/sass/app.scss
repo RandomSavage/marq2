@@ -158,8 +158,8 @@ text-align: center;
 }
 
 .middle-info .img-box{
-  width: 420px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   margin: 10px auto;
 
 }
@@ -168,10 +168,9 @@ text-align: center;
   /* margin: 0 26px; */
   width: 100%;
   height: 100%;
-  background: url("../images/ponyMaskAlpha.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: left;
+  background-position: center;
 }
 
 .right-info{
@@ -190,7 +189,6 @@ text-align: center;
   text-align: center;
   justify-content: center;
   padding-left: 1.5%;
-
 }
 
 .bottom-header{
@@ -269,17 +267,27 @@ text-align: center;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-image: url("../images/ponyMaskAlpha.png");
+
+  // background-image: url("../../public/images/ponyMaskAlpha.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   float: left;
-  -webkit-box-shadow: -5px 10px 10px -2px rgba(124,123,130,1);
-  -moz-box-shadow: -5px 10px 10px -2px rgba(124,123,130,1);
-  box-shadow: -5px 10px 10px -2px rgba(124,123,130,1);
+
   margin-bottom: 20px;
 }
 
+.marqee-section .author-img img{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-box-shadow: -5px 10px 10px -2px rgba(124,123,130,1);
+  -moz-box-shadow: -5px 10px 10px -2px rgba(124,123,130,1);
+  box-shadow: -5px 10px 10px -2px rgba(124,123,130,1);
+  border-radius: 50%;
+}
 .marqee-section .who{
 
 }
@@ -323,6 +331,7 @@ text-align: center;
   font-size: 1.5rem;
   color: red;
   margin: 0 10px 0 0;
+  transform: scaleX(-1);
 }
 
 .marqee-section .comment{
@@ -343,8 +352,8 @@ text-align: center;
   display: inline-block;
   width: 33%;
   -webkit-box-shadow: -5px 10px 10px -2px rgba(124,123,130,1);
--moz-box-shadow: -5px 10px 10px -2px rgba(124,123,130,1);
-box-shadow: -5px 10px 10px -2px rgba(124,123,130,1);
+  -moz-box-shadow: -5px 10px 10px -2px rgba(124,123,130,1);
+  box-shadow: -5px 10px 10px -2px rgba(124,123,130,1);
   /* float: right; */
   /* padding: 0px 536px 0 0; */
   /* border: 1px dotted red; */

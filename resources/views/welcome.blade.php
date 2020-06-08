@@ -36,6 +36,7 @@
                     <marquee behavior="alternate" direction="right" scrollamount="1">
                       <div class="img-box">
                         <div class="img">
+                          <img src="../../images/ponyMaskAlpha.png" alt="">
                         </div>
                       </div>
                     </marquee>
@@ -52,7 +53,7 @@
                   <section class="marqee-section">
                         <div class="authId">
                           <div class="author-img">
-
+                            <img src="../../images/ponyMaskAlpha.png" alt="">
                           </div>
                           <div class="who">
                             <h5>Ananda Dolan</h5>
@@ -73,7 +74,7 @@
                     </div>
                     <div class="authId">
                       <div class="author-img">
-
+                        <img src="../../images/ponyMaskAlpha.png" alt="">
                       </div>
                       <div class="who">
                         <h5>we know who</h5>
