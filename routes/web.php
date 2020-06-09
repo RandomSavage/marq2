@@ -27,3 +27,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/info', 'HomeController@info');
+
+Route::get('/messages/create', 'MessageController@create');

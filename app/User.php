@@ -19,6 +19,11 @@ class User extends Authenticatable {
         'name', 'email', 'password', 'profile_image'
     ];
 
+    /**One to Many**/
+    public function messages() {
+      return $this->hasMany('App\MessageController', 'user_id');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
