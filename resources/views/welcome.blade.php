@@ -51,12 +51,13 @@
               <div id="feedback">
                 <marquee behavior="scroll" direction="up" scrollamount="3">
                   <section class="marqee-section">
+                    @foreach ($messages as $message)
                         <div class="authId">
                           <div class="author-img">
-                            <img src="../../images/ponyMaskAlpha.png" alt="">
+                            <img src="{{$message->user->profile_image}}}" alt="">
                           </div>
                           <div class="who">
-                            <h5>Ananda Dolan</h5>
+                            <h5>{{$message->user->name}}</h5>
                           </div>
                         </div>
                         <div class="hands">
@@ -69,9 +70,10 @@
                             <p>2</p>
                           </div>
                         </div>
-                    <div class="comment">
-                      <p>When the sky's cotton candy melts and stirs into a sipping-pink lemonade.</p>
-                    </div>
+                        <div class="comment">
+                          <p>{{$message->message_input}}</p>
+                        </div>
+                    @endforeach
                     <div class="authId">
                       <div class="author-img">
                         <img src="../../images/ponyMaskAlpha.png" alt="">

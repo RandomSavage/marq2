@@ -13,19 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/uploadfile','UploadFileController@index');
-Route::post('/uploadfile','UploadFileController@showUploadFile');
+Route::get('/', 'MessageController@welcome');
+
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::post('/profile/update', 'ProfileController@updateProfile')->name('profile.update');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/info', 'HomeController@info');
 
+
+// create a message
 Route::get('/messages/create', 'MessageController@create');
+
+
+// part of a tutorial unused in this project
+// Route::get('/uploadfile','UploadFileController@index');
+// Route::post('/uploadfile','UploadFileController@showUploadFile');
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/info', 'HomeController@info');

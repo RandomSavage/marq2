@@ -30,7 +30,7 @@ class ProfileController extends Controller {
         $user = User::findOrFail(auth()->user()->id);
         // Set user name
         $user->name = $request->input('name');
-
+        $user->profile_image = $request->input('profile_image');
         // Check if a profile image has been uploaded
         if ($request->has('profile_image')) {
             // Get image file

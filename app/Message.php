@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MessageController extends Model {
+class Message extends Model {
 
     protected $table = 'message_controllers';
 
@@ -12,7 +12,7 @@ class MessageController extends Model {
       'user_name', 'message_input', 'user_id'
     ];
 
-    public function messages() {
+    public function user() {
       return $this->belongsTo('App\User');
     }
 }

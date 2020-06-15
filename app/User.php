@@ -21,7 +21,7 @@ class User extends Authenticatable {
 
     /**One to Many**/
     public function messages() {
-      return $this->hasMany('App\MessageController', 'user_id');
+      return $this->hasMany('App\Message', 'user_id');
     }
 
     /**

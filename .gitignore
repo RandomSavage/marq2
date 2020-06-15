@@ -13,3 +13,4 @@ yarn-error.log
 php.ini
 /uploads
 /views/info.blade.php
+/database/seeds/UsersTableSeeder.php
