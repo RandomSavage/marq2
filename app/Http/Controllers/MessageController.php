@@ -49,30 +49,29 @@ class MessageController extends Controller {
 //     ]);
 // }
 
-// public function welcome()
-// {
-// $user = User::all();
-// $messages = Message::with(['user'])->get();
-// var_dump($user);
-// return view('welcome', [
-//   'messages' => $messages,
-//   'user' => $user
-// ]);
-// }
-
 public function welcome()
 {
 $user = User::all();
-$messages = DB::table('message_controllers')->orderBy('id')->chunk(100, function ($messages) {
-  
-    return view('welcome', [
-      'messages' => $messages,
-
-    ]);
-
-});
-
+$messages = Message::with(['user'])->get();
+return view('welcome', [
+  'messages' => $messages,
+  'user' => $user
+]);
 }
+
+// public function welcome()
+// {
+// $user = User::all();
+// $messages = DB::table('message_controllers')->orderBy('id')->chunk(100, function ($messages) {
+//
+//     return view('welcome', [
+//       'messages' => $messages,
+//
+//     ]);
+//
+// });
+//
+// }
 
     //   public function welcome() {
     // $user = User::find(2);

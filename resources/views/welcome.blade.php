@@ -50,42 +50,31 @@
               </section>
               <div id="feedback">
                 <marquee behavior="scroll" direction="up" scrollamount="3">
+                  @foreach ($messages as $message)
                   <section class="marqee-section">
-                    @foreach ($messages as $message)
-                        <div class="authId">
-                          <div class="author-img">
-                            <img src="{{$message->user->profile_image}}" alt="">
-                          </div>
-                          <div class="who">
-                            <h5>{{$message->user->name}}</h5>
-                          </div>
-                        </div>
-                        <div class="hands">
-                          <div class="thumbs-up">
-                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                            <p>1</p>
-                          </div>
-                          <div class="thumbs-down">
-                            <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-                            <p>2</p>
-                          </div>
-                        </div>
-                        <div class="comment">
-                          <p>{{$message->message_input}}</p>
-                        </div>
-                    @endforeach
                     <div class="authId">
                       <div class="author-img">
-                        <img src="../../images/ponyMaskAlpha.png" alt="">
+                        <img src="{{$message->user->profile_image}}" alt="">
                       </div>
                       <div class="who">
-                        <h5>we know who</h5>
+                        <h5>{{$message->user->name}}</h5>
+                      </div>
+                    </div>
+                    <div class="hands">
+                      <div class="thumbs-up">
+                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                        <p>1</p>
+                      </div>
+                      <div class="thumbs-down">
+                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                        <p>2</p>
                       </div>
                     </div>
                     <div class="comment">
-                      <p>Are messages felt?</p>
+                      <p>{{$message->message_input}}</p>
                     </div>
               </section>
+              @endforeach
             </marquee>
             </div>
             <footer>
