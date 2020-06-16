@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\User;
 use App\Message;
@@ -39,13 +40,40 @@ class MessageController extends Controller {
     //   "messages" => $messages
     // ]);
 
-    public function welcome()
+//     public function welcome()
+// {
+//     $messages = Message::with(['user'])->get();
+//     $user = User::findOrFail(auth()->user()->id);
+//     return view('welcome', [
+//       'messages' => $messages
+//     ]);
+// }
+
+// public function welcome()
+// {
+// $user = User::all();
+// $messages = Message::with(['user'])->get();
+// var_dump($user);
+// return view('welcome', [
+//   'messages' => $messages,
+//   'user' => $user
+// ]);
+// }
+
+public function welcome()
 {
-    $messages = Message::with(['user'])->get();
+$user = User::all();
+$messages = DB::table('message_controllers')->orderBy('id')->chunk(100, function ($messages) {
+  
     return view('welcome', [
-      'messages' => $messages
+      'messages' => $messages,
+
     ]);
+
+});
+
 }
+
     //   public function welcome() {
     // $user = User::find(2);
     // $messages = Message::all();
