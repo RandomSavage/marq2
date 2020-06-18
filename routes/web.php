@@ -19,8 +19,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'MessageController@welcome');
 
+Route::post('/messages/create/store', 'MessageController@store')->name('messages.create.store');
+
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
+
 Route::post('/profile/update', 'ProfileController@updateProfile')->name('profile.update');
 
 Auth::routes();

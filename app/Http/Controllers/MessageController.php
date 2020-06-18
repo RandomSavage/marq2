@@ -25,11 +25,11 @@ class MessageController extends Controller {
       ]);
 
       $message = new Message();
-      $message->user_name = request('title');
-      $message->message_input = request('description');
+      $message->user_name = request('user_name');
+      $message->message_input = request('message_input');
       $message->user_id = request('user_id');
       $message->save();
-        return redirect('/');
+        return redirect()->back()->with(['status' => 'Message saved successfully.']);
       }
 
     //   public function welcome($slug) {
