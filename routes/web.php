@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', 'MessageController@welcome');
+Route::get('/', 'MessageController@home');
 
-Route::post('/messages/create/store', 'MessageController@store')->name('messages.create.store');
+Route::post('/messages/create', 'MessageController@create');
+
+Route::post('/messages/create', 'MessageController@store');
 
 
 Route::get('/profile', 'ProfileController@index')->name('profile');

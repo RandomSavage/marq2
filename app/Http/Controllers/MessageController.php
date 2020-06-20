@@ -29,7 +29,8 @@ class MessageController extends Controller {
       $message->message_input = request('message_input');
       $message->user_id = request('user_id');
       $message->save();
-        return redirect()->back()->with(['status' => 'Message saved successfully.']);
+        // return redirect()->back()->with(['status' => 'Message saved successfully.']);
+        return var_dump($message->user_name);
       }
 
     //   public function welcome($slug) {
@@ -49,11 +50,11 @@ class MessageController extends Controller {
 //     ]);
 // }
 
-public function welcome()
+public function home()
 {
 $user = User::all();
 $messages = Message::with(['user'])->get();
-return view('welcome', [
+return view('/pages/home', [
   'messages' => $messages,
   'user' => $user
 ]);

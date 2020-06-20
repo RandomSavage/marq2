@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>create</title>
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="/css/app.css">
-  </head>
-  <body>
-    <header>
+@extends('layouts.main-form')
+
+@section('title')
+  Enter a Message
+@endsection
+
+@section('content')
+
+  <header>
     <h1>Create a new Message</h1>
   </header>
   <main>
 
-    <form id="Msg" method="POST" action="{{ route('messages.create.store') }}">
+    <form id="Msg" method="POST" action="/messages/create">
        @csrf
 
 
@@ -32,10 +30,7 @@
 
   </main>
   <footer>
-    <a href="index.html">Back to main menu</a>
+    <a href="/">Back to main menu</a>
   </footer>
-</body>
 
-</html>
-  </body>
-</html>
+@endsection
