@@ -13,6 +13,14 @@ class MessageController extends Controller {
       $this->middleware('auth');
     }
 
+    public function index() {
+    // $items = FoodItem::All();
+    $messages = Message::paginate(3);
+    return view('/messages/all', [
+      'messages' => $messages
+    ]);
+  }
+
     public function create() {
       $messages = Message::All();
       return view('messages/create', [
@@ -63,6 +71,12 @@ return view('/pages/home', [
   'user' => $user
 ]);
 }
+
+public function delete($id) {
+       $message = Message::find($id);
+       $message->delete();
+       return redirect('/messages/all');
+     }
 
 // public function welcome()
 // {

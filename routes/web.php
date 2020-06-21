@@ -23,6 +23,11 @@ Route::post('/messages/create', 'MessageController@create');
 
 Route::post('/messages/create', 'MessageController@store');
 
+//Display all Messages
+Route::get('/messages/all', 'MessageController@index');
+
+Route::delete('/messages/all/{id}/delete', 'MessageController@delete');
+
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
 
