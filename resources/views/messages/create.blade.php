@@ -16,7 +16,7 @@
 
 
 
-      <div><label>Message Number: <br><input type="text" @error('user_id') is-invalid @enderror name="message_number" value="{{ old('user_id') }}" required autocomplete="user_id" autofocus placeholder="user_id"></label></div>
+      <div><label>Message Number: <br><input type="text" @error('user_id') is-invalid @enderror name="user_id" value="{{ old('user_id') }}" required autocomplete="user_id" autofocus placeholder="user_id"></label></div>
 
       <div><label>User Name: <br><input type="text" @error('user_name') is-invalid @enderror name="user_name" value="{{ old('user_name') }}" required autocomplete="user_name" autofocus placeholder="user_name"></label></div>
 
@@ -25,7 +25,7 @@
       When the sky's cotton candy melts and stirs into a sipping-pink lemonade.
       </textarea>
         </label></div>
-      <div><button type="submit" name="submit">Save</button></div>
+      <div><button type="submit" name="button">Save</button></div>
     </form>
 
   </main>

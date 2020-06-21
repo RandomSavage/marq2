@@ -9,6 +9,10 @@ use App\Message;
 
 class MessageController extends Controller {
 
+    public function __construct() {
+      $this->middleware('auth');
+    }
+
     public function create() {
       $messages = Message::All();
       return view('messages/create', [
@@ -16,7 +20,7 @@ class MessageController extends Controller {
       ]);
     }
 
-    public function store() {
+    public function store(Request $request) {
       // return request()->all();
       request()->validate([
         'user_name' => ['required', 'string', 'max:255'],
@@ -25,12 +29,12 @@ class MessageController extends Controller {
       ]);
 
       $message = new Message();
-      $message->user_name = request('user_name');
-      $message->message_input = request('message_input');
-      $message->user_id = request('user_id');
+      $message->user_name = $request->input('user_name');
+      $message->message_input = $request->input('message_input');
+      $message->user_id = $request->input('user_id');
       $message->save();
-        // return redirect()->back()->with(['status' => 'Message saved successfully.']);
-        return var_dump($message->user_name);
+        return redirect()->back()->with(['status' => 'Message saved successfully.']);
+
       }
 
     //   public function welcome($slug) {
@@ -53,7 +57,7 @@ class MessageController extends Controller {
 public function home()
 {
 $user = User::all();
-$messages = Message::with(['user'])->get();
+$messages = Message::with(['user'])->orderBy('user_id', 'asc')->get();
 return view('/pages/home', [
   'messages' => $messages,
   'user' => $user

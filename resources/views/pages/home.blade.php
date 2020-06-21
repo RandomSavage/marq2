@@ -16,7 +16,7 @@
           <marquee behavior="alternate" direction="right" scrollamount="1">
             <div class="img-box">
               <div class="img">
-                <img src="../../images/ponyMaskAlpha.png" alt="">
+                <img src="../../images/mail.jpg" alt="">
               </div>
             </div>
           </marquee>
