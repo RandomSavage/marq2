@@ -26,6 +26,10 @@ Route::post('/messages/create', 'MessageController@store');
 //Display all Messages
 Route::get('/messages/all', 'MessageController@index');
 
+Route::get('/messages/{id}/edit', 'MessageController@edit');
+
+Route::put('/messages/{id}', 'MessageController@update');
+
 Route::delete('/messages/all/{id}/delete', 'MessageController@delete');
 
 

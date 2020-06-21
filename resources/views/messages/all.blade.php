@@ -10,7 +10,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
                     <h2 class="pageheader-title">Messages</h2>
-                    <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                    <p class="pageheader-text">Edit and Delete</p>
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -52,14 +52,14 @@
                                             <td>{{$message->user_name}}</td>
                                             <td>{{$message->message_input}}</td>
                                             <td>{{date('m/d/Y', strtotime($message->updated_at))}}</td>
-                                            <td><a href="/messages/all/{{$message->id}}/edit"><i class="far fa-edit"></i></a></td>
+                                            <td><a href="/messages/{{$message->id}}/edit"><i class="far fa-edit"></i></a></td>
                                             <td>
                                               <!-- <a href="/admin/item/{{$message->id}}/delete" onclick="if(!  confirm('Are you sure you want to delete category?')) {return false;}"><i class="fas fa-trash-alt"></i></a> -->
                                             <a href="#"
                                                onclick="event.preventDefault();
                                                               if(!  confirm('Are you sure you want to delete item?')) {return false;} else {
                                                              document.getElementById('delete-item-{{$message->id}}').submit()};">
-                                                <i class="fas fa-trash-alt"></i>
+                                                <i class="far fa-edit"></i>
                                             </a>
 
                                             <form id="delete-item-{{$message->id}}" action="/messages/all/{{$message->id}}/delete" method="POST" style="display: none;">

@@ -14,7 +14,7 @@ class MessageController extends Controller {
     }
 
     public function index() {
-    // $items = FoodItem::All();
+    // $messages = FoodItem::All();
     $messages = Message::paginate(3);
     return view('/messages/all', [
       'messages' => $messages
@@ -71,6 +71,29 @@ return view('/pages/home', [
   'user' => $user
 ]);
 }
+
+public function edit($id) {
+    $message = Message::find($id);
+    return view('messages/edit', [
+      'message' => $message,
+    ]);
+    }
+
+    public function update($id) {
+      request()->validate([
+        'user_name' => ['required', 'string', 'max:255'],
+        'message_input' => ['required', 'string'],
+        'user_id' => ['required', 'integer']
+      ]);
+
+      $message = Message::find($id);
+      $message->user_name = request('user_name');
+      $message->message_input = request('message_input');
+      $message->user_id = request('user_id');
+      $message->save();
+        return redirect('/');
+
+      }
 
 public function delete($id) {
        $message = Message::find($id);
